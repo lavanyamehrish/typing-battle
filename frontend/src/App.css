@@ -13,6 +13,37 @@ body {
     font-family: Arial;
   }
   
+  .paragraph {
+    font-size: 22px;
+    line-height: 1.6;
+    margin: 20px 0;
+    text-align: left;
+    user-select: none;
+  }
+  
+  .char {
+    color: #6b7280;
+  }
+  
+  .char.correct {
+    color: #22c55e;
+  }
+  
+  .char.incorrect {
+    color: #ef4444;
+  }
+  
+  .cursor {
+    border-left: 2px solid white;
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
   .card {
     background: rgba(30, 41, 59, 0.9);
     padding: 40px;
@@ -53,3 +84,36 @@ body {
     font-weight: bold;
   }
   
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #0f172a, black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 4rem;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .overlay h2 {
+    font-size: 6rem;
+    color: #22c55e;
+    animation: pulse 1s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
